@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indie Developer | Career Profile & Tech Stack</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- QRCode.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace'],
+                    },
+                    colors: {
+                        cyber: {
+                            950: '#07080d',
+                            900: '#0b0d14',
+                            850: '#0f121d',
+                            800: '#121625',
+                            700: '#1c2237',
+                            600: '#2a3350',
+                            cyan: '#00f0ff',
+                            purple: '#8b5cf6',
+                            mint: '#10b981',
+                            pink: '#ec4899',
+                            amber: '#f59e0b'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0b0d14;
+            color: #f3f4f6;
+            background-image: 
+                radial-gradient(circle at 15% 15%, rgba(0, 240, 255, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 85% 80%, rgba(139, 92, 246, 0.09) 0%, transparent 45%),
+                radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.04) 0%, transparent 50%),
+                linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+            background-size: 100% 100%, 100% 100%, 100% 100%, 32px 32px, 32px 32px;
+        }
+        .font-mono {
+            font-family: 'Fira Code', monospace;
+        }
+        .glass-card {
+            background: rgba(18, 22, 37, 0.75);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-card:hover {
+            border-color: rgba(0, 240, 255, 0.4);
+            box-shadow: 0 10px 30px -10px rgba(0, 240, 255, 0.15);
+        }
+        .cyber-gradient-text {
+            background: linear-gradient(135deg, #00f0ff 0%, #8b5cf6 50%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .mint-gradient-text {
+            background: linear-gradient(135deg, #10b981 0%, #00f0ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glow-cyan {
+            box-shadow: 0 0 25px -5px rgba(0, 240, 255, 0.25);
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #07080d;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1c2237;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00f0ff;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased selection:bg-cyber-cyan selection:text-black">
+
+    <header class="sticky top-0 z-40 w-full glass-card border-b border-cyber-700/60 bg-cyber-950/85 backdrop-blur-md">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo Brand -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyber-purple via-cyber-cyan to-cyber-mint flex items-center justify-center text-cyber-950 shadow-lg shadow-cyber-cyan/20 group-hover:scale-105 transition-transform duration-300">
+                        <i class="fa-solid fa-gamepad text-lg"></i>
+                    </div>
+                    <span class="font-display font-bold text-xl sm:text-2xl tracking-tight text-white group-hover:text-cyber-cyan transition-colors">
+                        Indie<span class="text-cyber-cyan font-mono">&lt;Dev&gt;</span>
+                    </span>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center gap-6 text-xs sm:text-sm font-medium text-slate-300">
+                    <a href="#overview" class="hover:text-cyber-cyan transition-colors flex items-center gap-1.5">
+                        <i class="fa-solid fa-terminal text-xs text-cyber-cyan"></i> Overview
+                    </a>
+                    <a href="#skills" class="hover:text-cyber-cyan transition-colors flex items-center gap-1.5">
+                        <i class="fa-solid fa-code text-xs text-cyber-purple"></i> Tech & Skills
+                    </a>
+                    <a href="#duties" class="hover:text-cyber-cyan transition-colors flex items-center gap-1.5">
+                        <i class="fa-solid fa-layer-group text-xs text-cyber-mint"></i> Lifecycle
+                    </a>
+                    <a href="#pay" class="hover:text-cyber-cyan transition-colors flex items-center gap-1.5">
+                        <i class="fa-solid fa-coins text-xs text-cyber-amber"></i> Benchmarks
+                    </a>
+                    <a href="#calculator" class="hover:text-cyber-cyan transition-colors flex items-center gap-1.5">
+                        <i class="fa-solid fa-calculator text-xs text-cyber-pink"></i> Estimator
+                    </a>
+                </nav>
+
+                <!-- Actions / Share QR Button -->
+                <div class="flex items-center gap-3">
+                    <button id="qrOpenBtn" class="px-3.5 py-2 rounded-xl bg-cyber-800 hover:bg-cyber-700 text-slate-200 border border-cyber-700 text-xs sm:text-sm font-medium flex items-center gap-2 transition-all hover:border-cyber-cyan/50 shadow-sm" title="Generate Shareable QR Code">
+                        <i class="fa-solid fa-qrcode text-cyber-cyan"></i>
+                        <span class="hidden sm:inline">QR Share</span>
+                    </button>
+                    
+                    <!-- Mobile Drawer Toggle -->
+                    <button id="mobileMenuBtn" class="md:hidden p-2 rounded-xl text-slate-400 hover:text-white hover:bg-cyber-800 focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobileMenu" class="hidden md:hidden bg-cyber-900 border-b border-cyber-700 px-4 pt-2 pb-4 space-y-2 text-sm">
+            <a href="#overview" class="mobile-link block px-3 py-2 rounded-lg font-medium text-slate-200 hover:bg-cyber-800 hover:text-cyber-cyan">
+                <i class="fa-solid fa-terminal mr-2 text-cyber-cyan"></i> Overview
+            </a>
+            <a href="#skills" class="mobile-link block px-3 py-2 rounded-lg font-medium text-slate-200 hover:bg-cyber-800 hover:text-cyber-cyan">
+                <i class="fa-solid fa-code mr-2 text-cyber-purple"></i> Tech & Skills
+            </a>
+            <a href="#duties" class="mobile-link block px-3 py-2 rounded-lg font-medium text-slate-200 hover:bg-cyber-800 hover:text-cyber-cyan">
+                <i class="fa-solid fa-layer-group mr-2 text-cyber-mint"></i> Lifecycle
+            </a>
+            <a href="#pay" class="mobile-link block px-3 py-2 rounded-lg font-medium text-slate-200 hover:bg-cyber-800 hover:text-cyber-cyan">
+                <i class="fa-solid fa-coins mr-2 text-cyber-amber"></i> Benchmarks
+            </a>
+            <a href="#calculator" class="mobile-link block px-3 py-2 rounded-lg font-medium text-slate-200 hover:bg-cyber-800 hover:text-cyber-cyan">
+                <i class="fa-solid fa-calculator mr-2 text-cyber-pink"></i> Estimator
+            </a>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <section id="overview" class="relative pt-12 pb-20 overflow-hidden">
+            <!-- Glow Background Highlights -->
+            <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-cyber-cyan/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute top-1/3 right-10 w-80 h-80 bg-cyber-purple/15 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center max-w-3xl mx-auto">
+                    <!-- Terminal Badge -->
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyber-800/90 border border-cyber-cyan/30 text-xs sm:text-sm font-mono text-cyber-cyan mb-6 shadow-inner">
+                        <span class="flex h-2 w-2 rounded-full bg-cyber-mint animate-pulse"></span>
+                        $ system.init("Indie Developer Profile");
+                    </div>
+
+                    <h1 class="font-display text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-6 leading-tight">
+                        Indie <span class="cyber-gradient-text">Developer</span>
+                    </h1>
+
+                    <p class="text-slate-300 text-base sm:text-xl font-light leading-relaxed mb-8">
+                        Independent Game Creator, Systems Programmer & Digital Architect. Crafting standalone interactive experiences, gameplay mechanics, and software systems from concept to release.
+                    </p>
+
+                    <!-- Quick Stats Badges -->
+                    <div class="flex flex-wrap justify-center gap-3 text-xs sm:text-sm mb-10 font-mono">
+                        <span class="px-3.5 py-2 rounded-xl glass-card text-slate-200 flex items-center gap-2 border-cyber-700">
+                            <i class="fa-solid fa-desktop text-cyber-cyan"></i> PC • Console • Mobile • Web
+                        </span>
+                        <span class="px-3.5 py-2 rounded-xl glass-card text-slate-200 flex items-center gap-2 border-cyber-700">
+                            <i class="fa-solid fa-microchip text-cyber-purple"></i> Prototype to Release
+                        </span>
+                        <span class="px-3.5 py-2 rounded-xl glass-card text-emerald-400 flex items-center gap-2 border-emerald-500/30">
+                            <i class="fa-solid fa-circle text-[8px] animate-ping"></i> Contract & Collab Ready
+                        </span>
+                    </div>
+
+                    <!-- Action Callouts -->
+                    <div class="flex flex-wrap justify-center gap-4 text-xs sm:text-sm font-semibold">
+                        <a href="#calculator" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-cyber-cyan via-cyber-purple to-cyber-pink text-cyber-950 font-bold hover:brightness-110 transition-all shadow-lg shadow-cyber-cyan/20 flex items-center gap-2">
+                            <i class="fa-solid fa-calculator"></i> Project Scope Estimator
+                        </a>
+                        <button onclick="document.getElementById('qrOpenBtn').click()" class="px-6 py-3.5 rounded-xl glass-card text-white hover:border-cyber-cyan transition-all flex items-center gap-2">
+                            <i class="fa-solid fa-qrcode text-cyber-cyan"></i> Generate QR Code
+                        </button>
+                        <a href="#skills" class="px-6 py-3.5 rounded-xl glass-card text-slate-300 hover:text-white transition-all flex items-center gap-2">
+                            <i class="fa-solid fa-code text-cyber-purple"></i> View Tech Stack
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Interactive Terminal Status Bar -->
+                <div class="mt-14 glass-card rounded-2xl p-4 sm:p-6 glow-cyan border-cyber-cyan/20 max-w-4xl mx-auto">
+                    <div class="flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs">
+                        <div class="flex items-center gap-3">
+                            <div class="flex gap-1.5">
+                                <div class="w-3 h-3 rounded-full bg-rose-500/80"></div>
+                                <div class="w-3 h-3 rounded-full bg-amber-500/80"></div>
+                                <div class="w-3 h-3 rounded-full bg-emerald-500/80"></div>
+                            </div>
+                            <span class="text-slate-400">~/indie-dev/status.sh</span>
+                        </div>
+                        <div class="flex flex-wrap items-center gap-4 text-slate-300">
+                            <span><i class="fa-solid fa-cube text-cyber-cyan mr-1"></i> Engine: Unity / C# / Unreal</span>
+                            <span><i class="fa-solid fa-code-branch text-cyber-purple mr-1"></i> Git: Active</span>
+                            <span class="text-cyber-mint"><i class="fa-solid fa-check-double mr-1"></i> GitHub Pages Host</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="py-16 bg-cyber-900/60 border-t border-cyber-700/60 relative">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-14">
+                    <span class="text-cyber-cyan font-mono font-semibold text-xs sm:text-sm uppercase tracking-wider">// Section 01</span>
+                    <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-white mt-2">Skills & Tech Stack</h2>
+                    <p class="text-slate-400 text-sm sm:text-base mt-2">Systems engineering, gameplay mechanics design, and software toolsets for indie game creation.</p>
+                </div>
+
+                <!-- Core Competencies Grid -->
+                <h3 class="text-lg font-display font-bold text-white mb-6 flex items-center gap-2">
+                    <i class="fa-solid fa-gears text-cyber-cyan"></i> Core Gameplay & Systems Engineering
+                </h3>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                    
+                    <!-- Competency 1 -->
+                    <div class="glass-card rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1">
+                        <div class="w-12 h-12 rounded-xl bg-cyber-cyan/10 border border-cyber-cyan/30 flex items-center justify-center text-cyber-cyan mb-5">
+                            <i class="fa-solid fa-gamepad text-xl"></i>
+                        </div>
+                        <h4 class="font-display text-xl font-bold text-white mb-2">Gameplay Mechanics Design</h4>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                            Character controller responsiveness, combat systems, movement physics, inventory logic, and modular game loops that feel tight and rewarding.
+                        </p>
+                        <span class="text-xs font-mono text-cyber-cyan bg-cyber-950 px-2.5 py-1 rounded-md border border-cyber-cyan/30">Control Loops • Mechanics</span>
+                    </div>
+
+                    <!-- Competency 2 -->
+                    <div class="glass-card rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1">
+                        <div class="w-12 h-12 rounded-xl bg-cyber-purple/10 border border-cyber-purple/30 flex items-center justify-center text-cyber-purple mb-5">
+                            <i class="fa-solid fa-cubes text-xl"></i>
+                        </div>
+                        <h4 class="font-display text-xl font-bold text-white mb-2">2D & 3D Engine Architecture</h4>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                            Component-oriented programming, Object Pooling, State Machines, Memory Management, and Entity Component System (ECS) principles.
+                        </p>
+                        <span class="text-xs font-mono text-purple-300 bg-cyber-950 px-2.5 py-1 rounded-md border border-purple-500/30">Object Pooling • ECS • Architecture</span>
+                    </div>
+
+                    <!-- Competency 3 -->
+                    <div class="glass-card rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1">
+                        <div class="w-12 h-12 rounded-xl bg-cyber-mint/10 border border-cyber-mint/30 flex items-center justify-center text-cyber-mint mb-5">
+                            <i class="fa-solid fa-bolt text-xl"></i>
+                        </div>
+                        <h4 class="font-display text-xl font-bold text-white mb-2">Physics & Collision Logic</h4>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                            Rigidbodies, raycasting, custom hitboxes/hurtboxes, sub-stepping, ragdoll dynamics, and deterministic physics calculations.
+                        </p>
+                        <span class="text-xs font-mono text-emerald-300 bg-cyber-950 px-2.5 py-1 rounded-md border border-emerald-500/30">Raycasting • Sub-stepping • Colliders</span>
+                    </div>
+
+                    <!-- Competency 4 -->
+                    <div class="glass-card rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1">
+                        <div class="w-12 h-12 rounded-xl bg-cyber-pink/10 border border-cyber-pink/30 flex items-center justify-center text-cyber-pink mb-5">
+                            <i class="fa-solid fa-brain text-xl"></i>
+                        </div>
+                        <h4 class="font-display text-xl font-bold text-white mb-2">AI & Pathfinding Systems</h4>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                            Finite State Machines (FSM), Behavior Trees, NavMesh pathfinding, A* algorithms, utility AI, and perception/stealth sensors.
+                        </p>
+                        <span class="text-xs font-mono text-pink-300 bg-cyber-950 px-2.5 py-1 rounded-md border border-pink-500/30">Behavior Trees • A* • NavMesh</span>
+                    </div>
+
+                    <!-- Competency 5 -->
+                    <div class="glass-card rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1">
+                        <div class="w-12 h-12 rounded-xl bg-cyber-amber/10 border border-cyber-amber/30 flex items-center justify-center text-cyber-amber mb-5">
+                            <i class="fa-solid fa-sliders text-xl"></i>
+                        </div>
+                        <h4 class="font-display text-xl font-bold text-white mb-2">Shader & Graphics Programming</h4>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                            HLSL/GLSL shaders, particle VFX, post-processing stacks, lighting pipelines, custom material nodes, and visual polish.
+                        </p>
+                        <span class="text-xs font-mono text-amber-300 bg-cyber-950 px-2.5 py-1 rounded-md border border-amber-500/30">HLSL • VFX Graphs • Materials</span>
+                    </div>
+
+                    <!-- Competency 6 -->
+                    <div class="glass-card rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1">
+                        <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 mb-5">
+                            <i class="fa-solid fa-volume-high text-xl"></i>
+                        </div>
+                        <h4 class="font-display text-xl font-bold text-white mb-2">Sound & Middleware Integration</h4>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                            Adaptive audio systems, FMOD/Wwise sound event routing, dynamic music layering, and spatial 3D audio attenuation.
+                        </p>
+                        <span class="text-xs font-mono text-blue-300 bg-cyber-950 px-2.5 py-1 rounded-md border border-blue-500/30">FMOD • Adaptive Audio • Wwise</span>
+                    </div>
+
+                </div>
+
+                <!-- Tech Stack & Qualifications Split Row -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    
+                    <!-- Tech Stack Software Suite -->
+                    <div class="glass-card rounded-2xl p-6 sm:p-8">
+                        <h3 class="text-xl font-display font-bold text-white mb-4 flex items-center gap-3">
+                            <i class="fa-solid fa-code text-cyber-purple"></i> Engines & Tools Stack
+                        </h3>
+                        <p class="text-slate-400 text-xs sm:text-sm mb-6">Primary game engines, programming languages, and media creation tools.</p>
+
+                        <div class="space-y-3 font-mono text-xs">
+                            <div class="flex items-center justify-between p-3 rounded-xl bg-cyber-950 border border-cyber-700">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-8 h-8 rounded-lg bg-black text-white flex items-center justify-center font-bold">U</div>
+                                    <div>
+                                        <h5 class="font-semibold text-white font-sans text-sm">Unity Engine (C#)</h5>
+                                        <p class="text-slate-400 text-[11px] font-sans">Cross-platform 2D/3D development & URP</p>
+                                    </div>
+                                </div>
+                                <span class="text-cyber-cyan">Master</span>
+                            </div>
+
+                            <div class="flex items-center justify-between p-3 rounded-xl bg-cyber-950 border border-cyber-700">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-8 h-8 rounded-lg bg-slate-900 text-amber-400 flex items-center justify-center font-bold">UE</div>
+                                    <div>
+                                        <h5 class="font-semibold text-white font-sans text-sm">Unreal Engine (C++ / Blueprints)</h5>
+                                        <p class="text-slate-400 text-[11px] font-sans">High-end 3D graphics & visual scripting</p>
+                                    </div>
+                                </div>
+                                <span class="text-cyber-purple">Advanced</span>
+                            </div>
+
+                            <div class="flex items-center justify-between p-3 rounded-xl bg-cyber-950 border border-cyber-700">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-8 h-8 rounded-lg bg-emerald-950 text-emerald-400 flex items-center justify-center font-bold">G</div>
+                                    <div>
+                                        <h5 class="font-semibold text-white font-sans text-sm">Godot Engine & GameMaker</h5>
+                                        <p class="text-slate-400 text-[11px] font-sans">Lightweight 2D/3D prototyping & GDScript</p>
+                                    </div>
+                                </div>
+                                <span class="text-cyber-mint">Proficient</span>
+                            </div>
+
+                            <div class="flex items-center justify-between p-3 rounded-xl bg-cyber-950 border border-cyber-700">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-8 h-8 rounded-lg bg-amber-950 text-amber-400 flex items-center justify-center font-bold"><i class="fa-solid fa-cube"></i></div>
+                                    <div>
+                                        <h5 class="font-semibold text-white font-sans text-sm">Blender 3D & Aseprite</h5>
+                                        <p class="text-slate-400 text-[11px] font-sans">3D modeling, UV unwrapping, pixel art & animation</p>
+                                    </div>
+                                </div>
+                                <span class="text-cyber-amber">Advanced</span>
+                            </div>
+
+                            <div class="flex items-center justify-between p-3 rounded-xl bg-cyber-950 border border-cyber-700">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-8 h-8 rounded-lg bg-blue-950 text-blue-400 flex items-center justify-center font-bold"><i class="fa-solid fa-code"></i></div>
+                                    <div>
+                                        <h5 class="font-semibold text-white font-sans text-sm">WebGL / HTML5 Canvas / JS</h5>
+                                        <p class="text-slate-400 text-[11px] font-sans">Browser game compilation & GitHub Pages deployment</p>
+                                    </div>
+                                </div>
+                                <span class="text-blue-400">Expert</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Qualifications & Milestones -->
+                    <div class="glass-card rounded-2xl p-6 sm:p-8">
+                        <h3 class="text-xl font-display font-bold text-white mb-4 flex items-center gap-3">
+                            <i class="fa-solid fa-graduation-cap text-cyber-mint"></i> Qualifications & Milestones
+                        </h3>
+                        <p class="text-slate-400 text-xs sm:text-sm mb-6">Academic background, published titles, and teaching credentials.</p>
+
+                        <div class="space-y-4">
+                            <div class="p-4 rounded-xl bg-cyber-950 border border-cyber-700">
+                                <div class="flex items-start justify-between">
+                                    <div>
+                                        <h5 class="font-semibold text-white text-sm">BSc (Hons) Computer Science / Game Dev</h5>
+                                        <p class="text-xs text-slate-400">Higher Education Degree</p>
+                                        <p class="text-xs text-slate-500 mt-1">Specialization in graphics algorithms, data structures, and game engines.</p>
+                                    </div>
+                                    <span class="text-xs font-mono font-semibold px-2 py-1 bg-cyber-cyan/10 text-cyber-cyan rounded border border-cyber-cyan/30">BSc Degree</span>
+                                </div>
+                            </div>
+
+                            <div class="p-4 rounded-xl bg-cyber-950 border border-cyber-700">
+                                <div class="flex items-start justify-between">
+                                    <div>
+                                        <h5 class="font-semibold text-white text-sm">Published Titles on Steam & Itch.io</h5>
+                                        <p class="text-xs text-slate-400">Commercial & Indie Releases</p>
+                                        <p class="text-xs text-slate-500 mt-1">Full lifecycle commercial games with active player communities and positive reviews.</p>
+                                    </div>
+                                    <span class="text-xs font-mono font-semibold px-2 py-1 bg-purple-950 text-purple-300 rounded border border-purple-800">Steam Published</span>
+                                </div>
+                            </div>
+
+                            <div class="p-4 rounded-xl bg-cyber-950 border border-cyber-700">
+                                <div class="flex items-start justify-between">
+                                    <div>
+                                        <h5 class="font-semibold text-white text-sm">Level 3 Teaching & Mentoring Credentials</h5>
+                                        <p class="text-xs text-slate-400">Education & Technical Instruction</p>
+                                        <p class="text-xs text-slate-500 mt-1">Certified to mentor upcoming developers, run workshops, and teach coding.</p>
+                                    </div>
+                                    <span class="text-xs font-mono font-semibold px-2 py-1 bg-emerald-950 text-emerald-300 rounded border border-emerald-800">Certified Mentor</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="duties" class="py-16 relative">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-14">
+                    <span class="text-cyber-mint font-mono font-semibold text-xs sm:text-sm uppercase tracking-wider">// Section 02</span>
+                    <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-white mt-2">Development Lifecycle & Duties</h2>
+                    <p class="text-slate-400 text-sm sm:text-base mt-2">The end-to-end process of solo and micro-studio indie game production.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <!-- Step 1 -->
+                    <div class="glass-card rounded-2xl p-6 flex flex-col justify-between">
+                        <div>
+                            <div class="w-10 h-10 rounded-xl bg-cyber-cyan/20 text-cyber-cyan font-mono flex items-center justify-center font-bold text-sm mb-4">
+                                01
+                            </div>
+                            <h4 class="font-display text-lg font-bold text-white mb-2">Ideation & Greybox Prototyping</h4>
+                            <p class="text-slate-300 text-sm leading-relaxed">
+                                Designing game design documents (GDD), whiteboxing level layouts with primitive shapes, testing core gameplay loops, and verifying fun factor early.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-cyber-700/80 text-xs font-mono text-cyber-cyan flex items-center gap-2">
+                            <i class="fa-solid fa-shapes"></i> Greyboxing & GDD
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="glass-card rounded-2xl p-6 flex flex-col justify-between">
+                        <div>
+                            <div class="w-10 h-10 rounded-xl bg-cyber-purple/20 text-cyber-purple font-mono flex items-center justify-center font-bold text-sm mb-4">
+                                02
+                            </div>
+                            <h4 class="font-display text-lg font-bold text-white mb-2">Architecture & Code Production</h4>
+                            <p class="text-slate-300 text-sm leading-relaxed">
+                                Writing clean, modular C# or C++ engine code, building state managers, UI logic, save systems, AI behavior, and optimizing data structures.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-cyber-700/80 text-xs font-mono text-cyber-purple flex items-center gap-2">
+                            <i class="fa-solid fa-code"></i> Clean Architecture
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="glass-card rounded-2xl p-6 flex flex-col justify-between">
+                        <div>
+                            <div class="w-10 h-10 rounded-xl bg-cyber-mint/20 text-cyber-mint font-mono flex items-center justify-center font-bold text-sm mb-4">
+                                03
+                            </div>
+                            <h4 class="font-display text-lg font-bold text-white mb-2">Asset & Audio Pipeline</h4>
+                            <p class="text-slate-300 text-sm leading-relaxed">
+                                Modeling/drawing 2D sprites or 3D low-poly meshes, rigging character animations, writing custom shaders, and mapping FMOD dynamic audio tracks.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-cyber-700/80 text-xs font-mono text-cyber-mint flex items-center gap-2">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i> Art & Audio Pipeline
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="glass-card rounded-2xl p-6 flex flex-col justify-between">
+                        <div>
+                            <div class="w-10 h-10 rounded-xl bg-cyber-pink/20 text-cyber-pink font-mono flex items-center justify-center font-bold text-sm mb-4">
+                                04
+                            </div>
+                            <h4 class="font-display text-lg font-bold text-white mb-2">Playtesting & QA Profiling</h4>
+                            <p class="text-slate-300 text-sm leading-relaxed">
+                                Profiling frame rates, memory allocation leak hunting, difficulty balancing curve, player feedback iterations, and fixing physics bugs.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-cyber-700/80 text-xs font-mono text-cyber-pink flex items-center gap-2">
+                            <i class="fa-solid fa-bug-slash"></i> QA & Profiling
+                        </div>
+                    </div>
+
+                    <!-- Step 5 -->
+                    <div class="glass-card rounded-2xl p-6 flex flex-col justify-between">
+                        <div>
+                            <div class="w-10 h-10 rounded-xl bg-cyber-amber/20 text-cyber-amber font-mono flex items-center justify-center font-bold text-sm mb-4">
+                                05
+                            </div>
+                            <h4 class="font-display text-lg font-bold text-white mb-2">Platform Build & Publishing</h4>
+                            <p class="text-slate-300 text-sm leading-relaxed">
+                                Steamworks SDK setup, store page capsule creation, achievements, cloud saves integration, mobile builds, and WebGL export for browser hosting.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-cyber-700/80 text-xs font-mono text-cyber-amber flex items-center gap-2">
+                            <i class="fa-solid fa-store"></i> Steam & Store Setup
+                        </div>
+                    </div>
+
+                    <!-- Step 6 -->
+                    <div class="glass-card rounded-2xl p-6 flex flex-col justify-between">
+                        <div>
+                            <div class="w-10 h-10 rounded-xl bg-blue-500/20 text-blue-400 font-mono flex items-center justify-center font-bold text-sm mb-4">
+                                06
+                            </div>
+                            <h4 class="font-display text-lg font-bold text-white mb-2">Marketing & Post-Launch Support</h4>
+                            <p class="text-slate-300 text-sm leading-relaxed">
+                                Authoring developer logs (Devlogs), social teasers, press kits, Discord community management, post-release patch updates, and DLC content.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-cyber-700/80 text-xs font-mono text-blue-400 flex items-center gap-2">
+                            <i class="fa-solid fa-bullhorn"></i> Devlogs & Patches
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="pay" class="py-16 bg-cyber-900/60 border-t border-cyber-700/60 relative">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-14">
+                    <span class="text-cyber-amber font-mono font-semibold text-xs sm:text-sm uppercase tracking-wider">// Section 03</span>
+                    <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-white mt-2">Average Pay & Revenue Benchmarks</h2>
+                    <p class="text-slate-400 text-sm sm:text-base mt-2">UK indie developer salary benchmarks, freelance day rates, and typical revenue streams.</p>
+                </div>
+
+                <!-- Pay Tiers Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                    
+                    <!-- Tier 1 -->
+                    <div class="glass-card rounded-2xl p-6 flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs font-mono font-semibold text-cyber-cyan uppercase tracking-wide">Junior / Emerging</span>
+                            <h3 class="font-display text-2xl font-extrabold text-white mt-2 mb-1">£20k – £30k</h3>
+                            <p class="text-slate-400 text-xs mb-4">Annual Base / Grant Revenue</p>
+                            <p class="text-slate-300 text-xs leading-relaxed border-t border-cyber-700/80 pt-3">
+                                Entry-level studio role or early solo indie earning initial revenue from Itch.io sales, micro-grants, or game jams.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 text-[11px] font-mono text-slate-400">
+                            Freelance: ~£150 – £250 / day
+                        </div>
+                    </div>
+
+                    <!-- Tier 2 -->
+                    <div class="glass-card rounded-2xl p-6 flex flex-col justify-between border-cyber-cyan/40">
+                        <div>
+                            <span class="text-xs font-mono font-semibold text-cyber-mint uppercase tracking-wide">Mid-Level Published</span>
+                            <h3 class="font-display text-2xl font-extrabold text-white mt-2 mb-1">£32k – £48k</h3>
+                            <p class="text-slate-400 text-xs mb-4">Annual Earnings</p>
+                            <p class="text-slate-300 text-xs leading-relaxed border-t border-cyber-700/80 pt-3">
+                                Developers with 1-2 published Steam titles, combining direct game sales with client contract work.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 text-[11px] font-mono text-slate-400">
+                            Freelance: ~£250 – £380 / day
+                        </div>
+                    </div>
+
+                    <!-- Tier 3 -->
+                    <div class="glass-card rounded-2xl p-6 flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs font-mono font-semibold text-cyber-purple uppercase tracking-wide">Senior / Studio Founder</span>
+                            <h3 class="font-display text-2xl font-extrabold text-white mt-2 mb-1">£50k – £85k+</h3>
+                            <p class="text-slate-400 text-xs mb-4">Annual Net Revenue</p>
+                            <p class="text-slate-300 text-xs leading-relaxed border-t border-cyber-700/80 pt-3">
+                                Successful indie studio owners or hit title creators with multiplatform revenue and publisher deals.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 text-[11px] font-mono text-slate-400">
+                            Freelance: ~£400 – £600+ / day
+                        </div>
+                    </div>
+
+                    <!-- Tier 4 -->
+                    <div class="glass-card rounded-2xl p-6 flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs font-mono font-semibold text-cyber-pink uppercase tracking-wide">Contract Specialist</span>
+                            <h3 class="font-display text-2xl font-extrabold text-white mt-2 mb-1">£35 – £65</h3>
+                            <p class="text-slate-400 text-xs mb-4">Hourly Rate (UK Avg)</p>
+                            <p class="text-slate-300 text-xs leading-relaxed border-t border-cyber-700/80 pt-3">
+                                Specialized freelance systems programmer, shader artist, or gameplay integrator hired for specific milestones.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 text-[11px] font-mono text-slate-400">
+                            Standard Day Rate: £280 – £520
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Revenue Stream Breakdown Legend -->
+                <div class="glass-card rounded-2xl p-6 sm:p-8 max-w-4xl mx-auto">
+                    <h3 class="font-display font-bold text-white text-base sm:text-lg mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-chart-pie text-cyber-cyan"></i> Typical Indie Revenue Streams
+                    </h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-3 text-center">
+                        <div class="p-3.5 rounded-xl bg-cyber-950 border border-cyber-700">
+                            <span class="text-xl font-black text-cyber-cyan block font-mono">45%</span>
+                            <span class="text-xs text-slate-300 font-semibold block mt-1">Direct Sales</span>
+                            <span class="text-[10px] text-slate-500">Steam & Itch.io</span>
+                        </div>
+                        <div class="p-3.5 rounded-xl bg-cyber-950 border border-cyber-700">
+                            <span class="text-xl font-black text-cyber-purple block font-mono">25%</span>
+                            <span class="text-xs text-slate-300 font-semibold block mt-1">Client Contracts</span>
+                            <span class="text-[10px] text-slate-500">Work for hire</span>
+                        </div>
+                        <div class="p-3.5 rounded-xl bg-cyber-950 border border-cyber-700">
+                            <span class="text-xl font-black text-cyber-mint block font-mono">15%</span>
+                            <span class="text-xs text-slate-300 font-semibold block mt-1">Crowdfunding</span>
+                            <span class="text-[10px] text-slate-500">Kickstarter / Patreon</span>
+                        </div>
+                        <div class="p-3.5 rounded-xl bg-cyber-950 border border-cyber-700">
+                            <span class="text-xl font-black text-cyber-pink block font-mono">10%</span>
+                            <span class="text-xs text-slate-300 font-semibold block mt-1">Asset Store</span>
+                            <span class="text-[10px] text-slate-500">Tool & Shader packages</span>
+                        </div>
+                        <div class="p-3.5 rounded-xl bg-cyber-950 border border-cyber-700">
+                            <span class="text-xl font-black text-cyber-amber block font-mono">5%</span>
+                            <span class="text-xs text-slate-300 font-semibold block mt-1">Grants</span>
+                            <span class="text-[10px] text-slate-500">UK Games Fund & Arts</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="calculator" class="py-16 relative">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-14">
+                    <span class="text-cyber-pink font-mono font-semibold text-xs sm:text-sm uppercase tracking-wider">// Section 04</span>
+                    <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-white mt-2">Indie Project Scope & Cost Estimator</h2>
+                    <p class="text-slate-400 text-sm sm:text-base mt-2">Configure game type, platforms, asset strategy, and timeline to estimate development hours and budget.</p>
+                </div>
+
+                <div class="glass-card rounded-2xl p-6 sm:p-8 border-cyber-cyan/30 max-w-4xl mx-auto glow-cyan">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                        
+                        <!-- Configuration Controls -->
+                        <div class="lg:col-span-7 space-y-6">
+                            
+                            <!-- Game Type -->
+                            <div>
+                                <label class="text-xs font-semibold text-slate-200 mb-2 block flex items-center gap-2">
+                                    <i class="fa-solid fa-gamepad text-cyber-cyan"></i> Game Type & Complexity
+                                </label>
+                                <select id="gameTypeSelect" class="w-full bg-cyber-950 border border-cyber-700 text-white text-xs sm:text-sm rounded-xl p-3 focus:border-cyber-cyan focus:outline-none font-mono">
+                                    <option value="150" data-cost="2500" data-stack="HTML5 / WebGL / Itch.io" data-name="Micro 2D Arcade / Jam Title">Micro 2D Arcade / Jam Title (1-2 Core Mechanics)</option>
+                                    <option value="600" data-cost="9500" data-stack="Unity 2D / PC & Steamworks" data-name="Mid 2D Action / RPG / Metroidvania" selected>Mid 2D Action / RPG / Metroidvania</option>
+                                    <option value="1400" data-cost="22000" data-stack="Unity 3D or Unreal Engine / Multiplatform" data-name="3D Stylized Adventure / Action">3D Stylized Adventure / Third-Person Action</option>
+                                    <option value="2500" data-cost="38000" data-stack="Unreal C++ / Complex Systems Engine" data-name="Complex Simulation / Strategy / Systems">Complex Systems / Physics Simulation / Strategy</option>
+                                </select>
+                            </div>
+
+                            <!-- Target Platforms -->
+                            <div>
+                                <label class="text-xs font-semibold text-slate-200 mb-2 block flex items-center gap-2">
+                                    <i class="fa-solid fa-desktop text-cyber-purple"></i> Target Platforms
+                                </label>
+                                <select id="platformSelect" class="w-full bg-cyber-950 border border-cyber-700 text-white text-xs sm:text-sm rounded-xl p-3 focus:border-cyber-cyan focus:outline-none font-mono">
+                                    <option value="1.0" data-name="Single Platform (PC / Web)">Single Platform (PC / Steam OR Web)</option>
+                                    <option value="1.35" data-name="Dual Platform (PC + Mobile)" selected>Dual Platform (PC + Mobile iOS/Android)</option>
+                                    <option value="1.8" data-name="Multiplatform (PC + Console Switch/Xbox/PS)">Multiplatform (PC + Nintendo Switch / Console)</option>
+                                </select>
+                            </div>
+
+                            <!-- Asset Strategy -->
+                            <div>
+                                <label class="text-xs font-semibold text-slate-200 mb-2 block flex items-center gap-2">
+                                    <i class="fa-solid fa-paint-brush text-cyber-mint"></i> Asset & Audio Pipeline
+                                </label>
+                                <select id="assetSelect" class="w-full bg-cyber-950 border border-cyber-700 text-white text-xs sm:text-sm rounded-xl p-3 focus:border-cyber-cyan focus:outline-none font-mono">
+                                    <option value="50" data-cost="500" data-name="Solo Pixel / Low-Poly Minimalist">Solo Pixel Art / Low-Poly Minimalist Assets</option>
+                                    <option value="200" data-cost="2500" data-name="Hybrid Custom & Store Modular Packs" selected>Hybrid Custom Art & Modified Store Packages</option>
+                                    <option value="550" data-cost="7500" data-name="Premium Custom 3D & Adaptive Audio">Premium Custom 3D Models, Custom Music & FMOD</option>
+                                </select>
+                            </div>
+
+                            <!-- Launch Target Timeline -->
+                            <div>
+                                <label class="text-xs font-semibold text-slate-200 mb-2 block flex items-center gap-2">
+                                    <i class="fa-solid fa-clock text-cyber-amber"></i> Target Release Timeline
+                                </label>
+                                <select id="timelineSelect" class="w-full bg-cyber-950 border border-cyber-700 text-white text-xs sm:text-sm rounded-xl p-3 focus:border-cyber-cyan focus:outline-none font-mono">
+                                    <option value="0.85" data-name="Fast Prototype Sprint (1-3 Months)">Fast Prototype Sprint (1-3 Months)</option>
+                                    <option value="1.0" data-name="Standard Release (6-12 Months)" selected>Standard Release (6-12 Months)</option>
+                                    <option value="1.3" data-name="Full Commercial Title (12-24 Months)">Full Commercial Title (12-24 Months)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Quote Output Box -->
+                        <div class="lg:col-span-5 bg-cyber-950 rounded-2xl p-6 border border-cyber-700 flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between pb-4 border-b border-cyber-700">
+                                    <span class="text-xs font-mono font-semibold text-cyber-cyan uppercase tracking-wider">Project Scope Estimate</span>
+                                    <i class="fa-solid fa-microchip text-slate-500"></i>
+                                </div>
+
+                                <div class="mt-6 space-y-5">
+                                    <div>
+                                        <span class="text-slate-400 text-xs block">Estimated Dev Hours</span>
+                                        <span id="estimatedHours" class="font-display text-2xl font-bold text-white font-mono">1,080 Hours</span>
+                                    </div>
+
+                                    <div>
+                                        <span class="text-slate-400 text-xs block">Estimated Budget (GBP)</span>
+                                        <span id="estimatedBudget" class="font-display text-4xl font-extrabold text-cyber-cyan mt-1 block font-mono">£16,200</span>
+                                    </div>
+
+                                    <div>
+                                        <span class="text-slate-400 text-xs block mb-1">Recommended Tech & Release Stack</span>
+                                        <span id="recommendedStack" class="text-xs font-mono text-emerald-400 bg-emerald-950/60 px-3 py-1.5 rounded-lg border border-emerald-800/50 block">
+                                            Unity 2D / PC & Steamworks
+                                        </span>
+                                    </div>
+
+                                    <div class="p-3.5 rounded-xl bg-cyber-900 border border-cyber-800 text-xs text-slate-400 leading-relaxed space-y-1">
+                                        <p><i class="fa-solid fa-check text-cyber-mint mr-1.5"></i> Code modularity & Git revision control</p>
+                                        <p><i class="fa-solid fa-check text-cyber-mint mr-1.5"></i> Cross-platform input mapping ready</p>
+                                        <p><i class="fa-solid fa-check text-cyber-mint mr-1.5"></i> Playtest feedback integration cycles</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button id="copyEstimateBtn" class="w-full mt-6 py-3.5 rounded-xl bg-gradient-to-r from-cyber-cyan via-cyber-purple to-cyber-pink hover:brightness-110 text-cyber-950 text-xs font-bold transition-all shadow-lg shadow-cyber-cyan/20 flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-copy"></i> Copy Estimate Breakdown
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-cyber-950 border-t border-cyber-700/60 py-8 text-xs text-slate-500">
+        <div class="max-w-6xl mx-auto px-4 text-center space-y-3 font-mono">
+            <p class="font-medium text-slate-400">Indie Developer Career Showcase & Technical Profile</p>
+            <p>Optimized for <span class="text-cyber-cyan">GitHub Pages</span> deployment & mobile QR sharing.</p>
+            <p class="pt-2 text-slate-600">&copy; <span id="yearSpan"></span> Indie Developer Profile. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- GITHUB PAGES QR CODE GENERATOR MODAL -->
+    <div id="qrModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 hidden">
+        <div class="glass-card bg-cyber-900 border-cyber-cyan/40 rounded-2xl max-w-md w-full p-6 text-center relative shadow-2xl">
+            <button id="qrCloseBtn" class="absolute top-4 right-4 text-slate-400 hover:text-white p-1">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+
+            <div class="w-12 h-12 rounded-full bg-cyber-cyan/20 text-cyber-cyan flex items-center justify-center mx-auto mb-3">
+                <i class="fa-solid fa-qrcode text-xl"></i>
+            </div>
+
+            <h3 class="font-display text-xl font-bold text-white mb-1">GitHub Pages QR Generator</h3>
+            <p class="text-slate-400 text-xs mb-5">Enter your hosted GitHub Pages site address to generate an instant mobile-scannable QR code.</p>
+
+            <!-- URL Input Box -->
+            <div class="mb-4 text-left font-mono">
+                <label for="qrUrlInput" class="text-xs font-semibold text-slate-300 mb-1 block">Hosted GitHub Pages URL</label>
+                <input type="url" id="qrUrlInput" class="w-full bg-cyber-950 border border-cyber-700 text-white text-xs rounded-xl p-3 focus:border-cyber-cyan focus:outline-none" placeholder="https://username.github.io/indie-dev-portfolio/">
+            </div>
+
+            <!-- QR Render Canvas -->
+            <div class="bg-white p-4 rounded-2xl inline-block shadow-inner mb-4">
+                <div id="qrcode"></div>
+            </div>
+
+            <div class="flex items-center gap-2">
+                <button id="copyUrlBtn" class="flex-1 py-2.5 rounded-xl bg-cyber-800 hover:bg-cyber-700 text-slate-200 text-xs font-semibold border border-cyber-700 transition-colors flex items-center justify-center gap-1.5 font-mono">
+                    <i class="fa-solid fa-copy"></i> Copy Link
+                </button>
+                <button id="downloadQrBtn" class="flex-1 py-2.5 rounded-xl bg-gradient-to-r from-cyber-cyan to-cyber-purple text-cyber-950 text-xs font-bold transition-colors flex items-center justify-center gap-1.5 shadow-md font-mono">
+                    <i class="fa-solid fa-download"></i> Download PNG
+                </button>
+            </div>
+
+            <!-- Instructions Box -->
+            <div class="mt-4 p-3 rounded-xl bg-cyber-950 border border-cyber-800 text-[11px] text-slate-400 text-left space-y-1 font-mono">
+                <p class="text-cyber-cyan font-semibold">GitHub Pages Setup Steps:</p>
+                <p>1. Push this file as <code class="text-white">index.html</code> to your GitHub repository.</p>
+                <p>2. Enable Pages in <code class="text-white">Settings -&gt; Pages -&gt; Branch: main</code>.</p>
+                <p>3. Paste your live site link above to create & download your QR code.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-5 right-5 z-50 bg-cyber-cyan text-cyber-950 px-4 py-2.5 rounded-xl shadow-lg text-xs font-bold flex items-center gap-2 transform translate-y-20 opacity-0 transition-all duration-300 font-mono">
+        <i class="fa-solid fa-circle-check"></i> <span id="toastMsg">Action completed successfully!</span>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Set dynamic current year
+            document.getElementById('yearSpan').textContent = new Date().getFullYear();
+
+            // Mobile Navigation Toggle
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            const qrModal = document.getElementById('qrModal');
+            const qrOpenBtn = document.getElementById('qrOpenBtn');
+            const qrCloseBtn = document.getElementById('qrCloseBtn');
+            const qrUrlInput = document.getElementById('qrUrlInput');
+            const qrcodeContainer = document.getElementById('qrcode');
+            const downloadQrBtn = document.getElementById('downloadQrBtn');
+
+            function generateQRCode(url) {
+                if (!url) url = window.location.href;
+                qrcodeContainer.innerHTML = '';
+                
+                new QRCode(qrcodeContainer, {
+                    text: url,
+                    width: 170,
+                    height: 170,
+                    colorDark: "#0b0d14",
+                    colorLight: "#ffffff",
+                    correctLevel: QRCode.CorrectLevel.H
+                });
+            }
+
+            function openQRModal() {
+                const currentUrl = window.location.href;
+                qrUrlInput.value = currentUrl;
+                generateQRCode(currentUrl);
+                qrModal.classList.remove('hidden');
+            }
+
+            function closeQRModal() {
+                qrModal.classList.add('hidden');
+            }
+
+            qrOpenBtn.addEventListener('click', openQRModal);
+            qrCloseBtn.addEventListener('click', closeQRModal);
+            qrModal.addEventListener('click', (e) => {
+                if (e.target === qrModal) closeQRModal();
+            });
+
+            qrUrlInput.addEventListener('input', (e) => {
+                const val = e.target.value.trim();
+                generateQRCode(val || window.location.href);
+            });
+
+            // Copy Link Button
+            document.getElementById('copyUrlBtn').addEventListener('click', () => {
+                const textToCopy = qrUrlInput.value || window.location.href;
+                copyToClipboard(textToCopy);
+                showToast('GitHub Pages URL copied to clipboard!');
+            });
+
+            // Download QR Code PNG
+            downloadQrBtn.addEventListener('click', () => {
+                const img = qrcodeContainer.querySelector('img');
+                const canvas = qrcodeContainer.querySelector('canvas');
+                let imageSrc = '';
+
+                if (img && img.src) {
+                    imageSrc = img.src;
+                } else if (canvas) {
+                    imageSrc = canvas.toDataURL("image/png");
+                }
+
+                if (imageSrc) {
+                    const downloadLink = document.createElement('a');
+                    downloadLink.href = imageSrc;
+                    downloadLink.download = 'indie-dev-portfolio-qr.png';
+                    document.body.appendChild(downloadLink);
+                    downloadLink.click();
+                    document.body.removeChild(downloadLink);
+                    showToast('QR Code image downloaded!');
+                } else {
+                    showToast('Unable to export QR image.');
+                }
+            });
+
+            const gameTypeSelect = document.getElementById('gameTypeSelect');
+            const platformSelect = document.getElementById('platformSelect');
+            const assetSelect = document.getElementById('assetSelect');
+            const timelineSelect = document.getElementById('timelineSelect');
+
+            const estimatedHoursEl = document.getElementById('estimatedHours');
+            const estimatedBudgetEl = document.getElementById('estimatedBudget');
+            const recommendedStackEl = document.getElementById('recommendedStack');
+            const copyEstimateBtn = document.getElementById('copyEstimateBtn');
+
+            function calculateEstimate() {
+                const baseHours = parseFloat(gameTypeSelect.value);
+                const baseCost = parseFloat(gameTypeSelect.options[gameTypeSelect.selectedIndex].getAttribute('data-cost'));
+                const recStack = gameTypeSelect.options[gameTypeSelect.selectedIndex].getAttribute('data-stack');
+
+                const platformMult = parseFloat(platformSelect.value);
+                
+                const assetAdderHours = parseFloat(assetSelect.value);
+                const assetAdderCost = parseFloat(assetSelect.options[assetSelect.selectedIndex].getAttribute('data-cost'));
+
+                const timelineMult = parseFloat(timelineSelect.value);
+
+                // Calculations
+                const totalHours = Math.round((baseHours + assetAdderHours) * platformMult * timelineMult);
+                const totalBudget = Math.round(((baseCost + assetAdderCost) * platformMult * timelineMult));
+
+                estimatedHoursEl.textContent = `${totalHours.toLocaleString('en-GB')} Hours`;
+                estimatedBudgetEl.textContent = `£${totalBudget.toLocaleString('en-GB')}`;
+                recommendedStackEl.textContent = recStack;
+            }
+
+            gameTypeSelect.addEventListener('change', calculateEstimate);
+            platformSelect.addEventListener('change', calculateEstimate);
+            assetSelect.addEventListener('change', calculateEstimate);
+            timelineSelect.addEventListener('change', calculateEstimate);
+
+            // Initial calculation call
+            calculateEstimate();
+
+            // Copy Estimate Breakdown
+            copyEstimateBtn.addEventListener('click', () => {
+                const gameTypeName = gameTypeSelect.options[gameTypeSelect.selectedIndex].getAttribute('data-name');
+                const platformName = platformSelect.options[platformSelect.selectedIndex].getAttribute('data-name');
+                const assetName = assetSelect.options[assetSelect.selectedIndex].getAttribute('data-name');
+                const timelineName = timelineSelect.options[timelineSelect.selectedIndex].getAttribute('data-name');
+
+                const summaryText = `Indie Game Project Scope Estimate:\n\nProject Parameters:\n- Game Type: ${gameTypeName}\n- Platforms: ${platformName}\n- Asset Strategy: ${assetName}\n- Timeline Target: ${timelineName}\n\nOutputs:\n- Estimated Hours: ${estimatedHoursEl.textContent}\n- Estimated Budget: ${estimatedBudgetEl.textContent}\n- Tech Stack: ${recommendedStackEl.textContent}`;
+
+                copyToClipboard(summaryText);
+                showToast('Scope estimate summary copied!');
+            });
+
+            function copyToClipboard(text) {
+                const tempInput = document.createElement('textarea');
+                tempInput.value = text;
+                document.body.appendChild(tempInput);
+                tempInput.select();
+                document.execCommand('copy');
+                document.body.removeChild(tempInput);
+            }
+
+            function showToast(msg) {
+                const toast = document.getElementById('toast');
+                const toastMsg = document.getElementById('toastMsg');
+                toastMsg.textContent = msg;
+                toast.classList.remove('translate-y-20', 'opacity-0');
+                
+                setTimeout(() => {
+                    toast.classList.add('translate-y-20', 'opacity-0');
+                }, 2500);
+            }
+        });
+    </script>
+</body>
+</html>
